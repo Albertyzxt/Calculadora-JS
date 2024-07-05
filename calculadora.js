@@ -15,17 +15,17 @@ if (
   return;
 }
 
-let entrada = Number(prompt("Digite o primeiro número: "));
+let numeroUm = Number(prompt("Digite o primeiro número: "));
 
-if (isNaN(entrada)) {
+if (isNaN(numeroUm)) {
   console.log("Você deve digitar um número!");
 
   return;
 }
 
-let entrada2 = Number(prompt("Digite o segundo número: "));
+let numeroDois = Number(prompt("Digite o segundo número: "));
 
-if (isNaN(entrada2)) {
+if (isNaN(numeroDois)) {
   console.log("Você deve digitar um número!");
 
   return;
@@ -33,64 +33,56 @@ if (isNaN(entrada2)) {
 
 switch (operacao) {
   case "+":
-    console.log(`O resultado de sua adição é: ${plus(entrada, entrada2)}`);
+    console.log(`O resultado da adição é: ${plus(numeroUm, numeroDois)}`);
     break;
   case "-":
-    console.log(`O resultado de sua subtraçãdo é: ${minus(entrada, entrada2)}`);
+    console.log(`O resultado da subtraçãdo é: ${minus(numeroUm, numeroDois)}`);
     break;
   case "*":
     console.log(
-      `O resultado de sua multiplicação é: ${multiply(entrada, entrada2)}`
+      `O resultado da multiplicação é: ${multiply(numeroUm, numeroDois)}`
     );
     break;
   case "/":
-    console.log(`O resultado de sua divisão é: ${divide(entrada, entrada2)}`);
+    console.log(`O resultado da divisão é: ${divide(numeroUm, numeroDois)}`);
     break;
   case "%":
     console.log(
-      `O resultado de sua porcentagem é: ${percentage(entrada, entrada2)}`
+      `O resultado da porcentagem é: ${percentage(numeroUm, numeroDois)}`
     );
     break;
 }
 
-function plus(entrada, entrada2) {
-  let resultado;
-  resultado = entrada + entrada2;
+function plus(numeroUm, numeroDois) {
+  let resultado = numeroUm + numeroDois;
 
   return resultado.toFixed(2);
 }
 
-function minus(entrada, entrada2) {
-  let resultado;
-  resultado = entrada - entrada2;
+function minus(numeroUm, numeroDois) {
+  let resultado = numeroUm - numeroDois;
 
   return resultado.toFixed(2);
 }
 
-function multiply(entrada, entrada2) {
-  let resultado;
-  resultado = entrada * entrada2;
+function multiply(numeroUm, numeroDois) {
+  let resultado = numeroUm * numeroDois;
 
   return resultado.toFixed(2);
 }
 
-function divide(entrada, entrada2) {
-   let resultado;
-
-    if ((entrada = "0")) {
-       return "Nenhum número pode ser dividido por zero!";
-  } else if ((entrada2 = "0")) {
-       return"Nenhum número pode ser dividido por zero!";
+function divide(numeroUm, numeroDois) {
+  if (numeroDois == 0) {
+     return"Nenhum número pode ser dividido por zero!";
   } else {
-    resultado = entrada / entrada2;
+      let resultado = numeroUm / numeroDois;
 
     return resultado.toFixed(2);
   }
 }
 
-function percentage(entrada, entrada2) {
-  let resultado;
-  resultado = (entrada * entrada2) / 100;
+function percentage(numeroUm, numeroDois) {
+  let resultado = (numeroUm * numeroDois) / 100;
 
   return resultado.toFixed(2);
 }
